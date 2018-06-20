@@ -1,0 +1,45 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace SMSPlatformAPI.Models
+{
+    public enum Level
+    {
+        User=0,
+        Admin =1
+    }
+
+    public class User
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int UserId { get; set; }
+
+        [Required]
+        public string UserNo { get; set; }
+
+        [Required]
+        public string UserName { get; set; }
+
+        [Required]
+        public string Password { get; set; }
+
+        [Required]
+        [DataType(DataType.Date)]
+        public DateTime Birthday { get; set; }
+
+        [Required]
+        public string Phone { get; set; }
+
+        [Required]
+        [DefaultValue(0)]
+        public Level Level { get; set; }
+        
+        public string PermissionList { get; set; }
+    }
+}
