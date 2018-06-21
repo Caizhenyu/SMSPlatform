@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace SMSPlatform.Models
 {
-    public enum ApiState
+    public enum ApiStatus
     {
-        Error=0,
+        NoUse=0,
         Normal=1
     }
     public class Api
@@ -19,7 +19,7 @@ namespace SMSPlatform.Models
         public string ApiName { get; set; }
 
         [DefaultValue(1)]
-        public ApiState State { get; set; }
+        public ApiStatus Status { get; set; }
         public string Address { get; set; }
     }
 }

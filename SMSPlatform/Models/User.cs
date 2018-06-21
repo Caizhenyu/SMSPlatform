@@ -14,6 +14,12 @@ namespace SMSPlatform.Models
         Admin =1
     }
 
+    public enum UserStatua
+    {
+        NoUse=0,
+        Normal=1
+    }
+
     public class User
     {
         [Key]
@@ -39,7 +45,10 @@ namespace SMSPlatform.Models
         [Required]
         [DefaultValue(0)]
         public Level Level { get; set; }
-        
+
+        [DefaultValue(1)]
+        public UserStatua Status { get; set; }
+
         public string PermissionList { get; set; }
     }
 }

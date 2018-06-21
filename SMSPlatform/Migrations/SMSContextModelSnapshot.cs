@@ -28,7 +28,7 @@ namespace SMSPlatform.Migrations
 
                     b.Property<string>("ApiName");
 
-                    b.Property<int>("State");
+                    b.Property<int>("Status");
 
                     b.HasKey("ApiId");
 
@@ -51,6 +51,8 @@ namespace SMSPlatform.Migrations
 
                     b.Property<string>("Phone")
                         .IsRequired();
+
+                    b.Property<int>("Status");
 
                     b.HasKey("MemberId");
 
@@ -103,6 +105,8 @@ namespace SMSPlatform.Migrations
 
                     b.Property<string>("Phone")
                         .IsRequired();
+
+                    b.Property<int>("Status");
 
                     b.Property<string>("UserName")
                         .IsRequired();

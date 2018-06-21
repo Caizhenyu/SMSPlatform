@@ -4,10 +4,26 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SMSPlatform.Migrations
 {
-    public partial class Member : Migration
+    public partial class Status : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropColumn(
+                name: "State",
+                table: "Api");
+
+            migrationBuilder.AddColumn<int>(
+                name: "Status",
+                table: "User",
+                nullable: false,
+                defaultValue: 0);
+
+            migrationBuilder.AddColumn<int>(
+                name: "Status",
+                table: "Api",
+                nullable: false,
+                defaultValue: 0);
+
             migrationBuilder.CreateTable(
                 name: "Member",
                 columns: table => new
@@ -17,7 +33,8 @@ namespace SMSPlatform.Migrations
                     MemberNo = table.Column<string>(nullable: false),
                     MemberName = table.Column<string>(nullable: false),
                     Birthday = table.Column<DateTime>(nullable: false),
-                    Phone = table.Column<string>(nullable: false)
+                    Phone = table.Column<string>(nullable: false),
+                    Status = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -29,6 +46,20 @@ namespace SMSPlatform.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Member");
+
+            migrationBuilder.DropColumn(
+                name: "Status",
+                table: "User");
+
+            migrationBuilder.DropColumn(
+                name: "Status",
+                table: "Api");
+
+            migrationBuilder.AddColumn<int>(
+                name: "State",
+                table: "Api",
+                nullable: false,
+                defaultValue: 0);
         }
     }
 }

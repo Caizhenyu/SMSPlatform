@@ -10,8 +10,8 @@ using SMSPlatform.Models;
 namespace SMSPlatform.Migrations
 {
     [DbContext(typeof(SMSContext))]
-    [Migration("20180621061300_Member")]
-    partial class Member
+    [Migration("20180621062635_Status")]
+    partial class Status
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -30,7 +30,7 @@ namespace SMSPlatform.Migrations
 
                     b.Property<string>("ApiName");
 
-                    b.Property<int>("State");
+                    b.Property<int>("Status");
 
                     b.HasKey("ApiId");
 
@@ -53,6 +53,8 @@ namespace SMSPlatform.Migrations
 
                     b.Property<string>("Phone")
                         .IsRequired();
+
+                    b.Property<int>("Status");
 
                     b.HasKey("MemberId");
 
@@ -105,6 +107,8 @@ namespace SMSPlatform.Migrations
 
                     b.Property<string>("Phone")
                         .IsRequired();
+
+                    b.Property<int>("Status");
 
                     b.Property<string>("UserName")
                         .IsRequired();
