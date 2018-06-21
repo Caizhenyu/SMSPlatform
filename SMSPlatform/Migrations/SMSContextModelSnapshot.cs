@@ -19,7 +19,7 @@ namespace SMSPlatform.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("SMSPlatform.Models.Api", b =>
+            modelBuilder.Entity("SMSPlatformAPI.Models.Api", b =>
                 {
                     b.Property<string>("ApiId")
                         .ValueGeneratedOnAdd();
@@ -35,29 +35,7 @@ namespace SMSPlatform.Migrations
                     b.ToTable("Api");
                 });
 
-            modelBuilder.Entity("SMSPlatform.Models.Member", b =>
-                {
-                    b.Property<int>("MemberId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("Birthday");
-
-                    b.Property<string>("MemberName")
-                        .IsRequired();
-
-                    b.Property<string>("MemberNo")
-                        .IsRequired();
-
-                    b.Property<string>("Phone")
-                        .IsRequired();
-
-                    b.HasKey("MemberId");
-
-                    b.ToTable("Member");
-                });
-
-            modelBuilder.Entity("SMSPlatform.Models.Permission", b =>
+            modelBuilder.Entity("SMSPlatformAPI.Models.Permission", b =>
                 {
                     b.Property<string>("PermissionId")
                         .ValueGeneratedOnAdd();
@@ -69,7 +47,7 @@ namespace SMSPlatform.Migrations
                     b.ToTable("Permission");
                 });
 
-            modelBuilder.Entity("SMSPlatform.Models.Record", b =>
+            modelBuilder.Entity("SMSPlatformAPI.Models.Record", b =>
                 {
                     b.Property<int>("RecordId")
                         .ValueGeneratedOnAdd()
@@ -86,7 +64,7 @@ namespace SMSPlatform.Migrations
                     b.ToTable("Record");
                 });
 
-            modelBuilder.Entity("SMSPlatform.Models.User", b =>
+            modelBuilder.Entity("SMSPlatformAPI.Models.User", b =>
                 {
                     b.Property<int>("UserId")
                         .ValueGeneratedOnAdd()
@@ -115,7 +93,7 @@ namespace SMSPlatform.Migrations
                     b.ToTable("User");
                 });
 
-            modelBuilder.Entity("SMSPlatform.Models.UserApiExtend", b =>
+            modelBuilder.Entity("SMSPlatformAPI.Models.UserApiExtend", b =>
                 {
                     b.Property<int>("KeyId")
                         .ValueGeneratedOnAdd()

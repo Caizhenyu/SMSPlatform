@@ -18,6 +18,5 @@ namespace SMSPlatform.Models
         public DbSet<Api> Api { get; set; }
         public DbSet<Record> Record { get; set; }
         public DbSet<UserApiExtend> UserApiExtend { get; set; }
-        public DbSet<Member> Member { get; set; }
     }
 }
